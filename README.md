@@ -17,3 +17,15 @@ It also features:
 Make sure your background image is named **`bg.png`** and placed in the **same folder** as your `index.html`.
 
 Example structure:
+📁 wedding-countdown/
+├── index.html
+├── bg.png
+└── README.md
+
+---
+
+## 💫 How to Run Locally
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/<your-username>/wedding-countdown.git
+   cd wedding-countdown
