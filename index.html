@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shubham & [Partner's Name] Wedding Countdown 💍</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-image: url('https://images.unsplash.com/photo-1529634892681-1b8b1c5b8e9b');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      backdrop-filter: brightness(0.7);
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4em;
+      margin: 0.2em 0;
+      color: #ffd6e0;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    h2 {
+      font-size: 1.8em;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    #countdown {
+      font-size: 2.5em;
+      color: #ffe5b4;
+      background: rgba(0, 0, 0, 0.3);
+      display: inline-block;
+      padding: 20px 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      font-size: 1em;
+      color: #ffe5b4;
+      font-family: 'Great Vibes', cursive;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>💞 Shubham & [Partner's Name]</h1>
+  <h2>are getting married on 19th April 2026</h2>
+
+  <div id="countdown">Loading...</div>
+
+  <footer>Forever begins soon... 💫</footer>
+
+  <script>
+    const weddingDate = new Date("April 19, 2026 00:00:00").getTime();
+
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        days + " days " + hours + " hrs " + minutes + " min " + seconds + " sec ";
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "💍 It's Wedding Day! 💐";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
