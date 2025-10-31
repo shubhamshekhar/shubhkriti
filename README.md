@@ -16,12 +16,6 @@ It also features:
 ## 🖼️ Background Image
 Make sure your background image is named **`bg.png`** and placed in the **same folder** as your `index.html`.
 
-Example structure:
-📁 wedding-countdown/
-├── index.html
-├── bg.png
-└── README.md
-
 ---
 
 ## 💫 How to Run Locally
