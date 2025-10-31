@@ -8,67 +8,71 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&display=swap');
 
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Playfair Display', serif;
-      background-image: url('https://images.unsplash.com/photo-1589187155474-5c0b9c2a1f97?auto=format&fit=crop&w=1950&q=80');
+      background-image: url('https://images.unsplash.com/photo-1604480132736-0e8c9e74c37b?auto=format&fit=crop&w=1950&q=80');
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       color: #fff;
       text-align: center;
       height: 100vh;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      backdrop-filter: brightness(0.6);
-      overflow: hidden;
+      align-items: center;
+      position: relative;
+      backdrop-filter: brightness(0.7);
     }
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 4em;
-      margin: 0.2em 0;
+      font-size: 3.5em;
       color: #ffb6c1;
       text-shadow: 2px 2px 10px rgba(255, 105, 180, 0.8);
+      margin-bottom: 0.2em;
     }
 
     h2 {
-      font-size: 1.8em;
+      font-size: 1.4em;
       color: #ffe5ec;
-      margin-bottom: 30px;
+      margin-bottom: 1.5em;
     }
 
     #countdown {
-      font-size: 2.5em;
+      font-size: 2em;
       color: #ffd6a5;
       background: rgba(0, 0, 0, 0.4);
       display: inline-block;
-      padding: 20px 50px;
-      border-radius: 30px;
-      box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+      padding: 15px 40px;
+      border-radius: 25px;
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.6);
       animation: glow 3s ease-in-out infinite alternate;
     }
 
     @keyframes glow {
-      from {
-        box-shadow: 0 0 15px rgba(255, 182, 193, 0.4);
-      }
-      to {
-        box-shadow: 0 0 25px rgba(255, 182, 193, 0.9);
-      }
+      from { box-shadow: 0 0 15px rgba(255, 182, 193, 0.3); }
+      to { box-shadow: 0 0 25px rgba(255, 182, 193, 0.9); }
     }
 
     footer {
       position: absolute;
       bottom: 15px;
       width: 100%;
-      font-size: 1.2em;
+      font-size: 1.1em;
       color: #ffd6a5;
       font-family: 'Great Vibes', cursive;
       text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
     }
 
-    /* Optional: floating hearts animation */
+    /* Floating hearts */
     .heart {
       position: absolute;
       color: #ffb6c1;
@@ -83,53 +87,3 @@
         opacity: 0.7;
       }
       100% {
-        transform: translateY(-10vh) scale(1.2);
-        opacity: 0;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <h1>💞 Shubham & Sanskriti 💞</h1>
-  <h2>are getting married on 19th April 2026</h2>
-
-  <div id="countdown">Loading...</div>
-
-  <footer>Two hearts, one soul — forever begins soon... 💐</footer>
-
-  <script>
-    const weddingDate = new Date("April 19, 2026 00:00:00").getTime();
-
-    const timer = setInterval(function() {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown").innerHTML =
-        days + " days " + hours + " hrs " + minutes + " min " + seconds + " sec ";
-
-      if (distance < 0) {
-        clearInterval(timer);
-        document.getElementById("countdown").innerHTML = "💍 It's Wedding Day! 💐";
-      }
-    }, 1000);
-
-    // Floating hearts animation
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = 4 + Math.random() * 4 + "s";
-      heart.innerHTML = "💖";
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 8000);
-    }
-    setInterval(createHeart, 600);
-  </script>
-</body>
-</html>
