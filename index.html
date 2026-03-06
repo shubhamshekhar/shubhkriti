@@ -1851,6 +1851,23 @@
       }
     });
 
+    // Pause music when user switches tabs/minimizes browser
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        // Tab is hidden - pause music
+        if (isPlaying && !bgMusic.paused) {
+          bgMusic.pause();
+        }
+      } else {
+        // Tab is visible again - resume music if it was playing
+        if (isPlaying && bgMusic.paused) {
+          bgMusic.play().catch((error) => {
+            console.log('Resume playback failed:', error);
+          });
+        }
+      }
+    });
+
     // Tab Switching
     function showTab(tabName) {
       const tabs = document.querySelectorAll('.tab-content');
