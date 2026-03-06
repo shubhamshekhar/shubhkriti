@@ -612,8 +612,8 @@
     /* Music Toggle Button */
     .music-toggle {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      top: 80px;
+      left: 20px;
       width: 60px;
       height: 60px;
       border-radius: 50%;
@@ -997,6 +997,33 @@
       font-weight: 600;
     }
 
+    .venue-map-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #FFD700, #FF69B4, #FF1493);
+      color: white;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 50px;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+      transition: all 0.3s ease;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .venue-map-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(255, 105, 180, 0.5);
+    }
+
+    .venue-map-button:active {
+      transform: translateY(-1px);
+    }
+
     /* Floating Petals */
     .petal {
       position: fixed;
@@ -1206,8 +1233,8 @@
       .music-toggle {
         width: 55px;
         height: 55px;
-        bottom: 25px;
-        right: 25px;
+        top: 75px;
+        left: 15px;
       }
 
       .music-icon {
@@ -1448,8 +1475,8 @@
       .music-toggle {
         width: 50px;
         height: 50px;
-        bottom: 20px;
-        right: 20px;
+        top: 70px;
+        left: 10px;
       }
 
       .music-icon {
@@ -1546,6 +1573,12 @@
       .venue-address {
         font-size: 0.9rem;
       }
+
+      .venue-map-button {
+        font-size: 1rem;
+        padding: 10px 25px;
+        margin-top: 15px;
+      }
     }
   </style>
 </head>
@@ -1615,7 +1648,7 @@
           <p class="couple-names">Shubham & Sanskriti</p>
           <p class="subtitle">Counting down to forever</p>
           <div class="heart-divider">♥</div>
-          <p class="wedding-date">19TH APRIL 2026</p>
+          <p class="wedding-date">19<sup style="font-size: 0.5em; vertical-align: super;">TH</sup> APRIL 2026</p>
         </div>
 
         <!-- Countdown -->
@@ -1788,6 +1821,9 @@
         <h3 class="venue-name">The Rudraksh Hotel</h3>
         <p class="venue-address">Gate No. 01, Panna Road</p>
         <p class="venue-address">Chhatarpur (M.P.)</p>
+        <a href="https://maps.app.goo.gl/PiUeq3hhD7LoZqd58" target="_blank" rel="noopener noreferrer" class="venue-map-button">
+          📍 View on Google Maps
+        </a>
       </div>
     </div>
   </div>
